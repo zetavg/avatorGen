@@ -1,0 +1,24 @@
+!!! 5
+- data.config = data.sample.config if defined? data.config == "nil"
+- data.templates = data.sample.templates if defined? data.templates == "nil"
+- #if defined? data.templates == "nil" data.templates = data.sample.templates
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "initial-scale=1"}
+    %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}
+    %title= data.page.title || data.config.name
+    %meta{:name => "description", :content => data.config.metaDescription}
+    %meta{:property => "og:image", :content => data.config.ogImg}
+    = stylesheet_link_tag "app", "style"
+    = javascript_include_tag "modernizr"
+    - if data.config.googleFonts
+      %link{href: "http://fonts.googleapis.com/css?family=" + data.config.googleFonts, media: "screen", rel: "stylesheet"}
+  %body{:class => page_classes}
+    .wrapper
+      = yield
+    #canvas.canvas{:style => "width: " + data.config.avatarSize + "px; height: " + data.config.avatarSize + "px;"}
+    = javascript_include_tag  "all"
+    - if data.config.GAid != ''
+      :javascript
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','#{data.config.GAid}');ga('send','pageview');

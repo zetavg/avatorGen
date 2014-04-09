@@ -1,0 +1,9 @@
+{
+  "name": "avatorGen",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "html2canvas": "~0.4.1"
+  }
+}

@@ -1,0 +1,70 @@
+[
+	{
+		"name": "斜條紋",
+		"description": "斜斜的。",
+		"background-color": "#f7862c",
+		"image": "slash.png",
+		"content": "",
+		"parameters": [
+			{
+				"type": "image",
+				"name": "圖片",
+				"description": "用張圖片吧。"
+			},
+			{
+				"type": "text",
+				"name": "題字",
+				"description": "隨便輸入什麼都可以。",
+				"placeholder": "",
+				"style": "z-index: 1; color: white; font-size: 100px; font-family: 'Exo', sans-serif, cursive; text-align: right; height: auto; width: 400px; top: 70px; right: 60px; -moz-transform-origin:right bottom; -moz-transform:rotate(5deg); -webkit-transform-origin:right bottom; -webkit-transform:rotate(5deg); -o-transform-origin:right bottom; -o-transform:rotate(5deg); -ms-transform-origin:right bottom; -ms-transform:rotate(5deg); transform-origin:right bottom; transform:rotate(5deg);"
+			},
+			{
+				"type": "text",
+				"name": "註腳",
+				"description": "標示在左下角的小字。",
+				"placeholder": "avatorGen",
+				"style": "color: #cdcccb; font-size: 16px; font-family: 'Nova Square', cursive; width: auto; height: auto; bottom: 8px; left: 10px;"
+			}
+		]
+	},
+	{
+		"name": "黑黑",
+		"description": "關燈、黑黑黑黑黑黑嘿。",
+		"background-color": "#000",
+		"parameters": [
+			{
+				"type": "text",
+				"name": "字樣",
+				"description": "加個字吧。",
+				"placeholder": "天佑台灣",
+				"before": "<div style=\"display: inline-block; vertical-align: middle; width: 0; height: 100%;\"></div><div style=\"display: inline-block; vertical-align: middle;\">",
+				"after": "</div>",
+				"style": "color: white; text-align: center; font-size: 50px; font-weight: 700; font-family: 'Noto Sans', Helvetica, '儷黑 Pro', '微軟正黑體', Arial, sans-serif;"
+			}
+		]
+	},
+	{
+		"name": "組合",
+		"description": "很亮很漂亮。",
+		"background-color": "#777",
+		"parameters": [
+			{
+				"type": "image",
+				"name": "左",
+				"description": "左邊的。",
+				"style": "width: 50%; left: 0;"
+			},
+			{
+				"type": "image",
+				"name": "右",
+				"description": "右邊的。",
+				"style": "width: 50%; right: 0;"
+			},
+			{
+				"type": "text",
+				"name": "橫批",
+				"style": "color: white; text-align: center; font-size: 50px; font-weight: 700; font-family: 'Noto Sans', Helvetica, '儷黑 Pro', '微軟正黑體', Arial, sans-serif; height: auto; bottom: 20px;"
+			}
+		]
+	}
+]

@@ -1,0 +1,11 @@
+- wrap_layout :layout do
+  .container
+    %header
+      %hgroup
+        %h1= data.config.name
+        %h2= data.config.description
+    = yield
+    %footer
+      %p= data.config.footer
+      - if data.config.showFBlike
+        %iframe{:src => "//www.facebook.com/plugins/like.php?href=" + data.config.url, "scrolling" => "no", "frameborder" => "0", "style" => "border:none; overflow:hidden; height:80px;", "allowTransparency" => "true"}

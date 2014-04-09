@@ -1,0 +1,13 @@
+{
+	"name": "Generic Avatar Generator",
+	"description": "泛用型活動頭像產生器",
+	"metaDescription": "泛用型頭像產生器，可用於特定活動或事件，快速做出大頭貼製造機。",
+	"ogImg": "http://i.imgur.com/3YDjOrJ.png",
+	"id": "avatorGen",
+	"url": "https://neson.github.io/avatorGen",
+	"footer": "<small style=\"display: block; width: 100%; text-align: right;\"><a href=\"https://github.com/Neson/avatorGen\">Download it on GitHub</a></small>",
+	"avatarSize": "500",
+	"googleFonts": "Noto+Sans|Exo:400,800|Nova+Square",
+	"showFBlike": true,
+	"GAid": "UA-XXXXX-X"
+}

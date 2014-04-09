@@ -1,0 +1,37 @@
+---
+layout: app
+---
+
+.avator
+  %a.avator-img#avatorGen-imgAnchor{:href => "#", :target => "_blank"}
+    %img#avatorGen-img
+  %a#download.download{:download => "avatar.png"} DOWNLOAD
+
+.form
+  %dl{:class => "tabs", "data-tab" => ""}
+    - data.templates.each_with_index do |template, index|
+      %dd{:class => (index == 0)? "active" : ""}
+        %a{:href => "#template-form-"+index.to_s}= template.name
+  .tabs-content
+    - data.templates.each_with_index do |template, index|
+      .content{:class => (index == 0)? "active" : "", :id => "template-form-"+index.to_s}
+        %p= template.description
+        %input{:type => "hidden", :name => "background-color", :value => template['background-color'] == ''? "#000" : template['background-color']}
+        %input{:type => "hidden", :name => "image", :value => template['image'] == ''? "" : template['image']}
+        - template.parameters.each_with_index do |parameter, i|
+          - case parameter.type
+          - when "text"
+            %label
+              .title= parameter.name
+              = parameter.description
+              %input{"data-type" => "text", :type => "text", :placeholder => parameter.placeholder, "data-style" => parameter.style, "data-before" => parameter.before, "data-after" => parameter.after}
+          - when "image"
+            %label
+              .title= parameter.name
+              = parameter.description
+              %input{"data-type" => "image", :type => "hidden", :id => "avatorGen-img-"+index.to_s+"-"+i.to_s, "data-style" => parameter.style, "data-before" => parameter.before, "data-after" => parameter.after}
+              %input.input-img{:type => "file", :id => "avatorGen-img-input-"+index.to_s+"-"+i.to_s, "data-id" => index.to_s+"-"+i.to_s}
+
+
+
+
