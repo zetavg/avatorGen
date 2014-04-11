@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1" name="viewport">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>Generic Avatar Generator</title>
+    <meta content="泛用型頭像產生器，可用於特定活動或事件，快速做出大頭貼製造機。" name="description">
+    <meta content="http://i.imgur.com/3YDjOrJ.png" property="og:image">
+    <link href="/stylesheets/app.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/modernizr.js" type="text/javascript"></script>
+    <link href="http://fonts.googleapis.com/css?family=Noto+Sans|Exo:400,800|Nova+Square" media="screen" rel="stylesheet">
+  </head>
+  <body class="index">
+    <div class="wrapper">
+      <div class="container">
+        <header>
+          <hgroup>
+            <h1>Generic Avatar Generator</h1>
+            <h2>泛用型活動頭像產生器</h2>
+          </hgroup>
+        </header>
+        <div class="avator">
+          <a class="avator-img" href="#" id="avatorGen-imgAnchor" target="_blank">
+            <img id="avatorGen-img">
+          </a>
+          <a class="download" download="avatar.png" id="download">DOWNLOAD</a>
+        </div>
+        <div class="form">
+          <dl class="tabs" data-tab="">
+            <dd class="active">
+              <a href="#template-form-0">斜條紋</a>
+            </dd>
+            <dd class="">
+              <a href="#template-form-1">黑黑</a>
+            </dd>
+            <dd class="">
+              <a href="#template-form-2">組合</a>
+            </dd>
+          </dl>
+          <div class="tabs-content">
+            <div class="active content" id="template-form-0">
+              <p>斜斜的。</p>
+              <input name="background-color" type="hidden" value="#f7862c">
+              <input name="image" type="hidden" value="slash.png">
+              <label>
+                <div class="title">圖片</div>
+                用張圖片吧。
+                <input data-type="image" id="avatorGen-img-0-0" type="hidden">
+                <input class="input-img" data-id="0-0" id="avatorGen-img-input-0-0" type="file">
+              </label>
+              <label>
+                <div class="title">題字</div>
+                隨便輸入什麼都可以。
+                <input data-style="z-index: 1; color: white; font-size: 100px; font-family: 'Exo', sans-serif, cursive; text-align: right; height: auto; width: 400px; top: 70px; right: 60px; -moz-transform-origin:right bottom; -moz-transform:rotate(5deg); -webkit-transform-origin:right bottom; -webkit-transform:rotate(5deg); -o-transform-origin:right bottom; -o-transform:rotate(5deg); -ms-transform-origin:right bottom; -ms-transform:rotate(5deg); transform-origin:right bottom; transform:rotate(5deg);" data-type="text" placeholder="" type="text">
+              </label>
+              <label>
+                <div class="title">註腳</div>
+                標示在左下角的小字。
+                <input data-style="color: #cdcccb; font-size: 16px; font-family: 'Nova Square', cursive; width: auto; height: auto; bottom: 8px; left: 10px;" data-type="text" placeholder="avatorGen" type="text">
+              </label>
+            </div>
+            <div class="content" id="template-form-1">
+              <p>關燈、黑黑黑黑黑黑嘿。</p>
+              <input name="background-color" type="hidden" value="#000">
+              <input name="image" type="hidden">
+              <label>
+                <div class="title">字樣</div>
+                加個字吧。
+                <input data-after="&lt;/div&gt;" data-before='&lt;div style="display: inline-block; vertical-align: middle; width: 0; height: 100%;"&gt;&lt;/div&gt;&lt;div style="display: inline-block; vertical-align: middle;"&gt;' data-style="color: white; text-align: center; font-size: 50px; font-weight: 700; font-family: 'Noto Sans', Helvetica, '儷黑 Pro', '微軟正黑體', Arial, sans-serif;" data-type="text" placeholder="天佑台灣" type="text">
+              </label>
+            </div>
+            <div class="content" id="template-form-2">
+              <p>很亮很漂亮。</p>
+              <input name="background-color" type="hidden" value="#777">
+              <input name="image" type="hidden">
+              <label>
+                <div class="title">左</div>
+                左邊的。
+                <input data-style="width: 50%; left: 0;" data-type="image" id="avatorGen-img-2-0" type="hidden">
+                <input class="input-img" data-id="2-0" id="avatorGen-img-input-2-0" type="file">
+              </label>
+              <label>
+                <div class="title">右</div>
+                右邊的。
+                <input data-style="width: 50%; right: 0;" data-type="image" id="avatorGen-img-2-1" type="hidden">
+                <input class="input-img" data-id="2-1" id="avatorGen-img-input-2-1" type="file">
+              </label>
+              <label>
+                <div class="title">橫批</div>
+                
+                <input data-style="color: white; text-align: center; font-size: 50px; font-weight: 700; font-family: 'Noto Sans', Helvetica, '儷黑 Pro', '微軟正黑體', Arial, sans-serif; height: auto; bottom: 20px;" data-type="text" type="text">
+              </label>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <p><small style="display: block; width: 100%; text-align: right;"><a href="https://github.com/Neson/avatorGen">Download it on GitHub</a></small></p>
+          <iframe allowTransparency="true" frameborder="0" scrolling="no" src="//www.facebook.com/plugins/like.php?href=https://neson.github.io/avatorGen" style="border:none; overflow:hidden; height:80px;"></iframe>
+        </footer>
+      </div>
+    </div>
+    <div class="canvas" id="canvas" style="width: 500px; height: 500px;"></div>
+    <script src="/javascripts/all.js" type="text/javascript"></script>
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
+</html>
+
