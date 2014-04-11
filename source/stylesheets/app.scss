@@ -1,12 +1,26 @@
 @import "compass/css3";
-@import "settings";
-@import "foundation.scss";
+@import "foundation/functions";
+
+$row-width: rem-calc(800);
+
+$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+$small-range: (0em, 30em);
+$medium-range: (30.063em, 40em);
+$large-range: (40.063em, 90em);
+$xlarge-range: (90.063em, 120em);
+$xxlarge-range: (120.063em);
+
+$header-font-weight: 600;
 
 @mixin rgrid($phone-grid:"",$desktop-grid:""){
     @extend .small-#{$phone-grid};
     @extend .large-#{$desktop-grid};
     @extend .columns;
 }
+
+@import "foundation.scss";
+
 
 body {
 	overflow: hidden;
@@ -183,32 +197,4 @@ body {
 
 	@media #{$large-up} { padding-top: 40px; }
 	@media #{$xlarge-up} { padding-top: 80px; }
-}
-
-header {
-	@include grid-row;
-
-	.logo { @include grid-column($columns:3, $center:true); }
-	padding-bottom: em-calc(10px);
-
-}
-
-
-.main-content {
-	@include grid-row;
-
-	aside {
-		@include grid-column($columns:6);
-		// @media #{$medium-up} {
-		//   @include grid-column($columns:3);
-		// }
-	}
-
-	article {
-		@include grid-column($columns:6);
-		// @media #{$medium-up} {
-		//   @include grid-column($columns:8, $offset: 1);
-		// }
-	}
-
 }
