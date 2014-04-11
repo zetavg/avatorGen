@@ -10,7 +10,7 @@
     %title= data.page.title || data.config.name
     %meta{:name => "description", :content => data.config.metaDescription}
     %meta{:property => "og:image", :content => data.config.ogImg}
-    = stylesheet_link_tag "app", "style"
+    = stylesheet_link_tag "app"
     = javascript_include_tag "modernizr"
     - if data.config.googleFonts
       %link{href: "http://fonts.googleapis.com/css?family=" + data.config.googleFonts, media: "screen", rel: "stylesheet"}
