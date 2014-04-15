@@ -29,29 +29,51 @@ avatorGen.refreshImage = ->
       avatorGen.imgAnchor.attr "href", data
       avatorGen.downloadBtn.attr "href", data
 
+avatorGen.scaleImg = ->
+  $("#canvas .maintain-aspect-ratio img").each (intIndex) ->
+    width = $(this).width()
+    height = $(this).height()
+    wrapperWidth = $(this).parent().width()
+    wrapperHeight = $(this).parent().height()
+    scaletoWidth = wrapperWidth
+    scaletoHeight = height*wrapperWidth/width
+    $(this).css('top', (wrapperHeight-scaletoHeight)/2)
+    $(this).css('left', 0)
+    if scaletoHeight < wrapperHeight
+      scaletoHeight = wrapperHeight
+      scaletoWidth = width*wrapperHeight/height
+      $(this).css('top', 0)
+      $(this).css('left', (wrapperWidth-scaletoWidth)/2)
+    $(this).width(scaletoWidth)
+    $(this).height(scaletoHeight)
+
 avatorGen.update = ->
-  avatorGen.refreshImage()
   avatorGen.templateID = $(".form .tabs-content .active").attr("id");
   html = []
   $("#" + avatorGen.templateID + " input").each (intIndex) ->
     switch $(this).attr("name")
       when "background-color" then avatorGen.canvas.css 'background-color', $(this).attr("value")
-      when "image" then html.push '<img src="images/' + $(this).attr("value") + '">' if $(this).attr("value")?
+      when "image" then html.push '<img src="images/' + $(this).attr("value") + '" style="z-index: 10;">' if $(this).attr("value")?
       else
         switch $(this).attr("data-type")
           when "image"
             value = $(this).val() if $(this).val() != ''
             before = $(this).attr("data-before") ? ''
             after = $(this).attr("data-after") ? ''
-            html.push before + '<img style="z-index: 0; ' + $(this).attr("data-style") + '" src="' + value + '">' + after
+            style = $(this).attr("data-style") ? ''
+            maintainAspectRatio = if ($(this).attr("data-maintain-aspect-ratio") == 'true') then 'maintain-aspect-ratio' else ''
+            html.push before + '<div class="img ' + maintainAspectRatio + '" style="z-index: 1; ' + style + '"><img src="' + value + '"></div>' + after
           when "text"
             if $(this).val() != undefined
               value = $(this).attr("placeholder") ? ''
               value = $(this).val() if $(this).val() != ''
               before = $(this).attr("data-before") ? ''
               after = $(this).attr("data-after") ? ''
-              html.push '<div style="' + $(this).attr("data-style") + '">' + before + value + after + '</div>'
+              style = $(this).attr("data-style") ? ''
+              html.push '<div style="' + style + '">' + before + value + after + '</div>'
   avatorGen.canvas.html(html.join(''))
+  avatorGen.scaleImg()
+  avatorGen.refreshImage()
 
 avatorGen.update()
 

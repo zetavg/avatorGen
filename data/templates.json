@@ -9,7 +9,9 @@
 			{
 				"type": "image",
 				"name": "圖片",
-				"description": "用張圖片吧。"
+				"description": "用張圖片吧。",
+				"maintainAspectRatio": true,
+				"style": "width: 500px; height: 500px;"
 			},
 			{
 				"type": "text",
@@ -52,13 +54,13 @@
 				"type": "image",
 				"name": "左",
 				"description": "左邊的。",
-				"style": "width: 50%; left: 0;"
+				"style": "width: 50%; right: auto; left: 0;"
 			},
 			{
 				"type": "image",
 				"name": "右",
 				"description": "右邊的。",
-				"style": "width: 50%; right: 0;"
+				"style": "width: 50%; right: 0; left: auto;"
 			},
 			{
 				"type": "text",

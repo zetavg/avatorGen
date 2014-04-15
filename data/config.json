@@ -6,7 +6,8 @@
 	"id": "avatorGen",
 	"url": "https://neson.github.io/avatorGen",
 	"footer": "<small style=\"display: block; width: 100%; text-align: right;\"><a href=\"https://github.com/Neson/avatorGen\">Download it on GitHub</a></small>",
-	"avatarSize": "500",
+	"avatarWidth": "500",
+	"avatarHeight": "500",
 	"googleFonts": "Noto+Sans|Exo:400,800|Nova+Square",
 	"showFBlike": true,
 	"GAid": "UA-XXXXX-X"

@@ -17,7 +17,7 @@
   %body{:class => page_classes}
     .wrapper
       = yield
-    #canvas.canvas{:style => "width: " + data.config.avatarSize + "px; height: " + data.config.avatarSize + "px;"}
+    #canvas.canvas{:style => "width: " + data.config.avatarWidth + "px; height: " + data.config.avatarHeight + "px;"}
     = javascript_include_tag  "all"
     - if data.config.GAid != ''
       :javascript

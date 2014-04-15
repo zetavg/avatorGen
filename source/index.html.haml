@@ -29,9 +29,5 @@ layout: app
             %label
               .title= parameter.name
               = parameter.description
-              %input{"data-type" => "image", :type => "hidden", :id => "avatorGen-img-"+index.to_s+"-"+i.to_s, "data-style" => parameter.style, "data-before" => parameter.before, "data-after" => parameter.after}
+              %input{"data-type" => "image", :type => "hidden", :id => "avatorGen-img-"+index.to_s+"-"+i.to_s, "data-style" => parameter.style, "data-before" => parameter.before, "data-after" => parameter.after, "data-maintain-aspect-ratio" => parameter.maintainAspectRatio.to_s}
               %input.input-img{:type => "file", :id => "avatorGen-img-input-"+index.to_s+"-"+i.to_s, "data-id" => index.to_s+"-"+i.to_s}
-
-
-
-
