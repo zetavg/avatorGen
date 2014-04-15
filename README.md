@@ -3,6 +3,8 @@ avatorGen
 
 泛用型活動頭像產生器。
 
+Demo: [http://neson.github.io/avatorGen/](http://neson.github.io/avatorGen/)
+
 ## Build it
 
 ```
